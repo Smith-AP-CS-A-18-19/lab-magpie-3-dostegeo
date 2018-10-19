@@ -89,7 +89,7 @@ public class Magpie3 {
 
 		// The only change to incorporate the startPos is in
 		// the line below
-		int psn = findKeyword(phrase, goal, startPos);
+		int psn = phrase.indexOf(goal, startPos);
 
 		// Refinement--make sure the goal isn't part of a
 		// word
