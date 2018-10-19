@@ -1,12 +1,12 @@
 import javax.swing.JOptionPane;
-
+//George Doster
 /**
  * A simple class to run the Magpie class.
  * @author Laurie White
  * @version April 2012
  */
 public class MagpieRunner3 {
-
+	
 	/**
 	 * Create a Magpie, give it user input, and print its replies.
 	 */
