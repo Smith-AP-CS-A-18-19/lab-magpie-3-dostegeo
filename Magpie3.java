@@ -33,17 +33,37 @@ public class Magpie3 {
 		}
 		else if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
-		} else if (findKeyword(statement, "mother") >= 0
-				   || findKeyword(statement, "father") >= 0
-				   || findKeyword(statement, "sister") >= 0
-				   || findKeyword(statement, "brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		} else {
-			response = getRandomResponse();
-		}
-		return response;
-	}
+
+    } else if (findKeyword(statement, "Smith") >= 0
+    				   || findKeyword(statement, "Olson") >= 0
+    				   || findKeyword(statement, "Marshall") >= 0
+    				   || findKeyword(statement, "McLaughlin") >= 0
+    					 || findKeyword(statement, "Vandenberg") >= 0
+    					 || findKeyword(statement, "VanTreese") >= 0)
+    		{
+    			response = "Did you mean the Wolf Pack?";
+    		} else if (findKeyword(statement, "Oh") >= 0
+    					 || findKeyword(statement, "called") >= 0
+    					 || findKeyword(statement, "really") >= 0
+    					 || findKeyword(statement, "groupchat") >= 0
+    					 || findKeyword(statement, "hm") >= 0
+    					 || findKeyword(statement, "wow") >= 0)
+    		{
+    			response = "Yes, they're the intellectuals of Berkeley";
+    		} else if (findKeyword(statement, "What") >= 0
+    					 || findKeyword(statement, "do") >= 0
+    					 || findKeyword(statement, "you") >= 0
+    					 || findKeyword(statement, "mean") >= 0
+    					 || findKeyword(statement, "ok") >= 0
+    					 || findKeyword(statement, "what") >= 0)
+    		{
+    			response = "Each one has his own specialization. With their combined knowledge, they are experts on the workings of the world.";
+    		} else {
+    			response = getRandomResponse();
+    		}
+    		return response;
+    	}
+
 
 	/**
 	 * Search for one word in phrase. The search is not case
@@ -69,7 +89,7 @@ public class Magpie3 {
 
 		// The only change to incorporate the startPos is in
 		// the line below
-		int psn = phrase.findKeyword(goal, startPos);
+		int psn = findKeyword(phrase, goal, startPos);
 
 		// Refinement--make sure the goal isn't part of a
 		// word
@@ -96,7 +116,7 @@ public class Magpie3 {
 
 			// The last position didn't work, so let's find
 			// the next, if there is one.
-			psn = phrase.findKeyword(goal, psn + 1);
+			psn = findKeyword(phrase, goal, psn + 1);
 
 		}
 
