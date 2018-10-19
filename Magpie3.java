@@ -69,7 +69,7 @@ public class Magpie3 {
 
 		// The only change to incorporate the startPos is in
 		// the line below
-		int psn = phrase.indexOf(goal, startPos);
+		int psn = phrase.findKeyword(goal, startPos);
 
 		// Refinement--make sure the goal isn't part of a
 		// word
@@ -87,18 +87,16 @@ public class Magpie3 {
 
 			// If before and after aren't letters, we've
 			// found the word
-			if (((before.compareTo("a") < 0) || (before
-					.compareTo("z") > 0)) // before is not a
+			if (((before.compareTo("a") < 0) || (before.compareTo("z") > 0)) // before is not a
 											// letter
-					&& ((after.compareTo("a") < 0) || (after
-							.compareTo("z") > 0)))
+					&& ((after.compareTo("a") < 0) || (after.compareTo("z") > 0)))
 			{
 				return psn;
 			}
 
 			// The last position didn't work, so let's find
 			// the next, if there is one.
-			psn = phrase.indexOf(goal, psn + 1);
+			psn = phrase.findKeyword(goal, psn + 1);
 
 		}
 
